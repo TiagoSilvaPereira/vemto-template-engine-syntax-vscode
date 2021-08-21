@@ -38,7 +38,7 @@
 		"variables": {
 			"patterns": [{
 				"name": "variable.language.vemtl",
-				"match": "(this|var|let)(?=((.*)(%>))|((.*)(up>))|((.*)(\\$>)))"
+				"match": "(this|var|let)(?=(\\.|\\s))(?=((.*)(%>))|((.*)(up>))|((.*)(\\$>)))"
 			}]
 		},
 		"strings": {
