@@ -1,0 +1,26 @@
+{
+    "name": "vemtl",
+    "displayName": "VTE Syntax",
+    "description": "Vemto Template Engine Syntax",
+    "version": "0.0.1",
+    "publisher": "Vemto.app",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "vemtl",
+            "aliases": ["Vemto", "VTE", "Vemto Template Engine"],
+            "extensions": [".vemtl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "vemtl",
+            "scopeName": "source.vemtl",
+            "path": "./syntaxes/vemtl.tmLanguage.json"
+        }]
+    }
+}

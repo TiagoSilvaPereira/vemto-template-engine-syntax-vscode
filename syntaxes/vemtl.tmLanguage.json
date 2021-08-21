@@ -1,0 +1,54 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Vemto Template Engine",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.block.vemtl",
+			"begin": "<#",
+			"end": "#>"
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.vemtl",
+				"match": "\\b(if|for|else|switch|case|break|in|of|console.log)\\b(?=((.*)(%>))|((.*)(up>))|((.*)($>)))"
+			},
+			{
+				"name": "keyword.other.vemtl",
+				"match": "((<%)([^#])|([^#])(%>)|(<up)([^#])|([^#])(up>))"
+			},
+			{
+				"name": "keyword.operator.vemtl",
+				"match": "((<\\$)|(\\$>))"
+			}]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.language.vemtl",
+				"match": "(this|var|let)(?=((.*)(%>))|((.*)(up>))|((.*)(\\$>)))"
+			}]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.vemtl",
+					"match": "(\")([^\"])(\\w*)(\")(?=((.*)(%>))|((.*)(up>))|((.*)($>)))"
+				}
+			]
+		}
+	},
+	"scopeName": "source.vemtl"
+}
