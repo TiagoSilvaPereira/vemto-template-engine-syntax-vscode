@@ -28,7 +28,7 @@
 			},
 			{
 				"name": "keyword.other.vemtl",
-				"match": "((<%)([^#])|([^#])(%>)|(<up)([^#])|([^#])(up>))"
+				"match": "((<%)([^#])|([^#])(%>)|(<up)([^#])|([^#])(up>)|(<import(\\s*)template)(.*)(>))"
 			},
 			{
 				"name": "keyword.operator.vemtl",
