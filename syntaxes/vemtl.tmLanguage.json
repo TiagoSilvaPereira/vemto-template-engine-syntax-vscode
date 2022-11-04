@@ -3,13 +3,16 @@
 	"name": "Vemto Template Engine",
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		},
-		{
 			"include": "#comments"
+		},
+		{
+			"include": "#interpolations"
+		},
+		{
+			"include": "#logics"
+		},
+		{
+			"include": "#uplogics"
 		},
 		{
 			"include": "#variables"
@@ -17,37 +20,40 @@
 	],
 	"repository": {
 		"comments": {
-			"name": "comment.block.vemtl",
+			"name": "comment",
 			"begin": "<#",
 			"end": "#>"
 		},
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.vemtl",
-				"match": "\\b(if|for|else|switch|case|break|in|of|console.log)\\b(?=((.*)(%>))|((.*)(up>))|((.*)($>)))"
-			},
-			{
-				"name": "keyword.other.vemtl",
-				"match": "((<%)([^#])|([^#])(%>)|(<up)([^#])|([^#])(up>)|(<import(\\s*)template)(.*)(>))"
-			},
-			{
-				"name": "keyword.operator.vemtl",
-				"match": "((<\\$)|(\\$>))"
-			}]
+		"interpolations": {
+			"name": "support.function",
+			"begin": "<\\$",
+			"end": "\\$>"
+		},
+		"logics": {
+			"name": "entity.name.function",
+			"begin": "<%",
+			"end": "%>",
+			"patterns": [
+				{
+					"include": "#variables"
+				}
+			]
+		},
+		"uplogics": {
+			"name": "entity.name.function",
+			"begin": "<up",
+			"end": "up>",
+			"patterns": [
+				{
+					"include": "#variables"
+				}
+			]
 		},
 		"variables": {
 			"patterns": [{
-				"name": "variable.language.vemtl",
-				"match": "(this|var|let)(?=(\\.|\\s))(?=((.*)(%>))|((.*)(up>))|((.*)(\\$>)))"
+				"name": "keyword",
+				"match": "(this|var|let|const|if|else)(?=(\\.|\\s))(?=((.*)(%>))|((.*)(up>))|((.*)(\\$>)))"
 			}]
-		},
-		"strings": {
-			"patterns": [
-				{
-					"name": "string.quoted.double.vemtl",
-					"match": "(\")([^\"])(\\w*)(\")(?=((.*)(%>))|((.*)(up>))|((.*)($>)))"
-				}
-			]
 		}
 	},
 	"scopeName": "source.vemtl"
