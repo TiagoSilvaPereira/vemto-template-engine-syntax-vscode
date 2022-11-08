@@ -15,6 +15,9 @@
 			"include": "#uplogics"
 		},
 		{
+			"include": "#imports"
+		},
+		{
 			"include": "#variables"
 		}
 	],
@@ -48,6 +51,11 @@
 					"include": "#variables"
 				}
 			]
+		},
+		"imports": {
+			"name": "entity.name.function",
+			"begin": "<import",
+			"end": ">"
 		},
 		"variables": {
 			"patterns": [{
