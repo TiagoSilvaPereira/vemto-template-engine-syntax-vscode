@@ -19,6 +19,9 @@
 		},
 		{
 			"include": "#variables"
+		},
+		{
+			"include": "#modes"
 		}
 	],
 	"repository": {
@@ -61,6 +64,12 @@
 			"patterns": [{
 				"name": "keyword",
 				"match": "(this|var|let|const|if|else)(?=(\\.|\\s))(?=((.*)(%>))|((.*)(up>))|((.*)(\\$>)))"
+			}]
+		},
+		"modes": {
+			"patterns": [{
+				"name": "variable.parameter",
+				"match": "<\\*(.*)\\*>"
 			}]
 		}
 	},
