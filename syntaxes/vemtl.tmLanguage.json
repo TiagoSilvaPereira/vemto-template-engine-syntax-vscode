@@ -56,7 +56,7 @@
 			]
 		},
 		"imports": {
-			"name": "entity.name.function",
+			"name": "variable.parameter",
 			"begin": "<import",
 			"end": ">"
 		},
