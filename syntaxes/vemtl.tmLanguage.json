@@ -22,6 +22,9 @@
 		},
 		{
 			"include": "#modes"
+		},
+		{
+			"include": "#vtheme"
 		}
 	],
 	"repository": {
@@ -70,6 +73,12 @@
 			"patterns": [{
 				"name": "variable.parameter",
 				"match": "<\\*(.*)\\*>"
+			}]
+		},
+		"vtheme": {
+			"patterns": [{
+				"name": "variable.parameter",
+				"match": "vtheme\\((.*?)\\)"
 			}]
 		}
 	},
